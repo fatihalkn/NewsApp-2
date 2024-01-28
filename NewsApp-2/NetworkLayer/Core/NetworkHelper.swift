@@ -28,6 +28,9 @@ class NetworkingHelper {
     
     func requestUrl(url: String)-> String {
         baseURL + url + "&apiKey=\(apıKey)"
+        
+        
     }
+    
     
 }

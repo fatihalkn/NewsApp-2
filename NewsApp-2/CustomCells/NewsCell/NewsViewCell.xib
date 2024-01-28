@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewsViewCell" id="gTV-IL-0wX" customClass="NewsViewCell" customModule="NewsApp_2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="396" height="174"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="396" height="174"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MeH-Kn-KfH">
+                        <rect key="frame" x="10" y="42" width="141" height="122"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="haber sahini" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plk-QP-BBK">
+                        <rect key="frame" x="10" y="10" width="69" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="haber başlığı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMr-F9-nhh">
+                        <rect key="frame" x="161" y="30" width="97" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsm-hL-xvg">
+                        <rect key="frame" x="161" y="60.333333333333329" width="220.66666666666663" height="63.333333333333329"/>
+                        <string key="text">afafasfasaaa1231rhv1jhrv1uvr1bqfjvajcmnvqbamsnfmqnvfsb jqmnvsbfmsnmbfjamnvsfbmansvfbmasvfbamsvfbmasnvfamsvfbamsvfmasvfjamsvfmanvsfb</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="haber tarihi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Q1-EF-SzI">
+                        <rect key="frame" x="161" y="133.66666666666666" width="64.666666666666686" height="30.333333333333343"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGc-iP-DrS">
+                        <rect key="frame" x="326.33333333333331" y="131.66666666666666" width="49.666666666666686" height="34.333333333333343"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="safari" catalog="system"/>
+                        <connections>
+                            <action selector="openNewsUrl:" destination="gTV-IL-0wX" eventType="touchUpInside" id="cOg-Hv-Fxn"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="MeH-Kn-KfH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="67D-p9-Hiu"/>
+                <constraint firstItem="4Q1-EF-SzI" firstAttribute="leading" secondItem="MeH-Kn-KfH" secondAttribute="trailing" constant="10" id="A63-Pb-ekk"/>
+                <constraint firstItem="MeH-Kn-KfH" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.70045" id="AYf-zW-HBn"/>
+                <constraint firstItem="MeH-Kn-KfH" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.81" id="CKJ-hO-OSO"/>
+                <constraint firstItem="mGc-iP-DrS" firstAttribute="centerY" secondItem="4Q1-EF-SzI" secondAttribute="centerY" id="FxC-jQ-FER"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gMr-F9-nhh" secondAttribute="trailing" constant="10" id="K5u-o1-aM1"/>
+                <constraint firstItem="gMr-F9-nhh" firstAttribute="leading" secondItem="MeH-Kn-KfH" secondAttribute="trailing" constant="10" id="K6k-AO-sue"/>
+                <constraint firstItem="MeH-Kn-KfH" firstAttribute="top" secondItem="Plk-QP-BBK" secondAttribute="bottom" constant="10" id="UBK-se-ncR"/>
+                <constraint firstItem="Plk-QP-BBK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="UbY-EK-UKk"/>
+                <constraint firstAttribute="bottom" secondItem="mGc-iP-DrS" secondAttribute="bottom" constant="8" id="WJW-ii-qmj"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Q1-EF-SzI" secondAttribute="trailing" constant="10" id="YEy-39-xLe"/>
+                <constraint firstItem="Plk-QP-BBK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="bW6-bv-TGr"/>
+                <constraint firstAttribute="bottom" secondItem="4Q1-EF-SzI" secondAttribute="bottom" constant="10" id="d9N-sK-vyG"/>
+                <constraint firstItem="xsm-hL-xvg" firstAttribute="top" secondItem="gMr-F9-nhh" secondAttribute="bottom" constant="10" id="eVl-Yh-d2K"/>
+                <constraint firstAttribute="trailing" secondItem="mGc-iP-DrS" secondAttribute="trailing" constant="20" id="gFe-aq-r82"/>
+                <constraint firstAttribute="bottom" secondItem="MeH-Kn-KfH" secondAttribute="bottom" constant="10" id="gtc-LF-1A0"/>
+                <constraint firstItem="4Q1-EF-SzI" firstAttribute="top" secondItem="xsm-hL-xvg" secondAttribute="bottom" constant="10" id="iek-gj-CnY"/>
+                <constraint firstItem="mGc-iP-DrS" firstAttribute="top" secondItem="xsm-hL-xvg" secondAttribute="bottom" constant="8" id="mBu-qj-l30"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xsm-hL-xvg" secondAttribute="trailing" constant="10" id="oWL-jQ-ZWJ"/>
+                <constraint firstItem="xsm-hL-xvg" firstAttribute="leading" secondItem="MeH-Kn-KfH" secondAttribute="trailing" constant="10" id="scL-OM-iBf"/>
+                <constraint firstItem="gMr-F9-nhh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="skf-k1-Aqd"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Plk-QP-BBK" secondAttribute="trailing" constant="10" id="wGw-af-aK2"/>
+            </constraints>
+            <size key="customSize" width="396" height="174"/>
+            <connections>
+                <outlet property="newsDescription" destination="xsm-hL-xvg" id="JxH-CZ-ET2"/>
+                <outlet property="newsİmageView" destination="MeH-Kn-KfH" id="HxE-0p-V8S"/>
+                <outlet property="newsOvner" destination="Plk-QP-BBK" id="Rod-zE-JOk"/>
+                <outlet property="newsPulishAt" destination="4Q1-EF-SzI" id="Jbd-q7-aDB"/>
+                <outlet property="newsTitle" destination="gMr-F9-nhh" id="j4O-Xv-Rth"/>
+                <outlet property="webButton" destination="mGc-iP-DrS" id="xj9-6Q-asO"/>
+            </connections>
+            <point key="canvasLocation" x="-403" y="46"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="safari" catalog="system" width="128" height="123"/>
+    </resources>
+</document>

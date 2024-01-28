@@ -7,7 +7,7 @@
 import Foundation
 
 
-enum Endpoint: String {
+enum EndpointTabs: String {
     case technology = "&category=technology"
     case sports = "&category=sports"
     case health = "&category=health"
@@ -16,13 +16,13 @@ enum Endpoint: String {
     var path: String {
         switch self {
         case .technology:
-            return NetworkingHelper.shared.requestUrl(url: Endpoint.technology.rawValue)
+            return NetworkingHelper.shared.requestUrl(url: EndpointTabs.technology.rawValue)
         case .sports:
-            return NetworkingHelper.shared.requestUrl(url: Endpoint.sports.rawValue)
+            return NetworkingHelper.shared.requestUrl(url: EndpointTabs.sports.rawValue)
         case .health:
-            return NetworkingHelper.shared.requestUrl(url: Endpoint.health.rawValue)
+            return NetworkingHelper.shared.requestUrl(url: EndpointTabs.health.rawValue)
         case .business:
-            return NetworkingHelper.shared.requestUrl(url: Endpoint.business.rawValue)
+            return NetworkingHelper.shared.requestUrl(url: EndpointTabs.business.rawValue)
         }
     }
 }

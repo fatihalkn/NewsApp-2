@@ -13,7 +13,13 @@ class HeaderTabsCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = frame.height / 2
+        layer.masksToBounds = true
     }
 
 }

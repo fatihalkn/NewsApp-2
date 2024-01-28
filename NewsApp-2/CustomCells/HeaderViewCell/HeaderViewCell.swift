@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HeaderViewCell: UICollectionViewCell {
     static let identifier = "HeaderViewCell"
@@ -16,4 +17,8 @@ class HeaderViewCell: UICollectionViewCell {
         // Initialization code
     }
 
+    func configure(data: Article) {
+//        data.urlToImage
+        headerNewsView.sd_setImage(with: URL(string: data.urlToImage ?? ""))
+    }
 }

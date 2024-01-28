@@ -18,9 +18,8 @@ class NetworkManager {
             let dataTask = session.dataTask(with: request) { data, request, error in
                 if let error = error {
                     completion(.failure(.genaralError))
-                } else {
-                    
                 }
+                
                 if let data = data {
                     self.handResponse(data: data) { response in
                         completion(response)

@@ -21,9 +21,11 @@ class RegisterController: UIViewController {
         super.viewDidLoad()
         buttonRadius()
     }
+    
     func buttonRadius() {
         registerButton.layer.cornerRadius = 10
     }
+    
     func pushLoginPage() {
         let loginController = LoginController()
         navigationController?.pushViewController(loginController, animated: true)

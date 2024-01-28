@@ -20,7 +20,7 @@ class TabsManager : TabsProtocol {
     static let shared = TabsManager()
     
     func getTabsTechnology(complete: @escaping (NewsModel?, Error?) -> ()) {
-        NetworkManager.shared.request(type: NewsModel.self, url: Endpoint.technology.path, method: .get) { response in
+        NetworkManager.shared.request(type: NewsModel.self, url: EndpointTabs.technology.path, method: .get) { response in
             switch response {
             case .success(let data):
             complete(data, nil)
@@ -32,7 +32,7 @@ class TabsManager : TabsProtocol {
     }
     
     func getTabsSports(complete: @escaping (NewsModel?, Error?) -> ()) {
-        NetworkManager.shared.request(type: NewsModel.self, url: Endpoint.sports.path, method: .get) { resposne  in
+        NetworkManager.shared.request(type: NewsModel.self, url: EndpointTabs.sports.path, method: .get) { resposne  in
             switch resposne {
                 
             case .success(let data):
@@ -45,7 +45,7 @@ class TabsManager : TabsProtocol {
     }
     
     func getTabsHealth(complete: @escaping (NewsModel?, Error?) -> ()) {
-        NetworkManager.shared.request(type: NewsModel.self, url: Endpoint.health.path, method: .get) { response in
+        NetworkManager.shared.request(type: NewsModel.self, url: EndpointTabs.health.path, method: .get) { response in
             switch response {
                 
             case .success(let data):
@@ -58,7 +58,7 @@ class TabsManager : TabsProtocol {
     }
     
     func getTabsBusiness(complete: @escaping (NewsModel?, Error?) -> ()) {
-        NetworkManager.shared.request(type: NewsModel.self, url: Endpoint.business.path, method: .get) { result in
+        NetworkManager.shared.request(type: NewsModel.self, url: EndpointTabs.business.path, method: .get) { result in
             switch result {
                 
             case .success(let data):

@@ -6,21 +6,43 @@
 //
 
 import UIKit
+import SafariServices
 
 
-class HomeNewsController: UIViewController, HeaderReusableViewDelegate {
-    func didSelectTabs(type: HeaderTabsType) {
-        //
-    }
-    
+class HomeNewsController: UIViewController {
+
     @IBOutlet weak var homeCollectionView: UICollectionView!
     
+    
+    let viewModel = HomeNewsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDelegets()
         setupRegister()
+        viewModelConfigure()
         
+    }
+    
+    fileprivate func viewModelConfigure() {
+        viewModel.getNewsTechnology()
+        viewModel.errorCallback = { errorMessage in
+            print("error: \(errorMessage)")
+            
+        }
+        
+        viewModel.succesCallback = { [weak self] in
+            DispatchQueue.main.async {
+                self?.homeCollectionView.reloadData()
+            }
+            
+        }
+        
+        viewModel.currentSelectedTypeUpdated = { [weak self] beforeTabType, afterTabType in
+            guard let header = self?.homeCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: IndexPath(item: 0, section: 0)) as? HeaderReusableView else { return }
+            header.selectTabCell(beforeTabType: beforeTabType, afterTabType: afterTabType)
+        }
+    
     }
     
     func setupDelegets() {
@@ -33,16 +55,9 @@ class HomeNewsController: UIViewController, HeaderReusableViewDelegate {
                                           bundle: nil),
                                           forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                           withReuseIdentifier: HeaderReusableView.identifier)
-        homeCollectionView.register(UINib(nibName: HeaderTabsCell.identifier,
+        homeCollectionView.register(UINib(nibName: NewsViewCell.identifier,
                                           bundle: nil),
-                                          forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                          withReuseIdentifier: HeaderTabsCell.identifier)
-        homeCollectionView.register(UINib(nibName: HeaderTabsCell.identifier,
-                                          bundle: nil),forCellWithReuseIdentifier: HeaderTabsCell.identifier)
-        homeCollectionView.register(UINib(nibName: HeaderViewCell.identifier, 
-                                          bundle: nil),
-                                          forCellWithReuseIdentifier: HeaderViewCell.identifier)
-       
+                                          forCellWithReuseIdentifier: NewsViewCell.identifier)
     }
     
 }
@@ -58,6 +73,7 @@ extension HomeNewsController: UICollectionViewDelegate, UICollectionViewDataSour
             case homeCollectionView:
                 let header = homeCollectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderReusableView.identifier, for: indexPath) as! HeaderReusableView
                 header.delegate = self
+                header.configure(data: viewModel.homeNews?.articles ?? [], currentSelectedTabType: viewModel.currentSelectedHeaderCategoryType)
                 return header
             default:
               return  UICollectionReusableView()
@@ -68,27 +84,57 @@ extension HomeNewsController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let headerWidth = collectionView.frame.width 
-        let headerHeight = 50.0
+        let headerWidth = collectionView.frame.width
+        let headerHeight = 200.0
         return CGSize(width: headerWidth, height: headerHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case homeCollectionView:
-            return 10
+            return viewModel.homeNews?.articles?.count ?? 0
         default:
             return .init()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
-        
-        
+        let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: NewsViewCell.identifier, for: indexPath) as! NewsViewCell
+        let newModel = viewModel.homeNews?.articles?[indexPath.item]
+        cell.configure(data: newModel)
+        cell.delegate = self
+        return cell
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth: CGFloat =  collectionView.frame.width
+        let cellHigth: CGFloat = 180
+        return(.init(width: cellWidth, height: cellHigth))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detilVc = NewsDetailController()
+        navigationController?.pushViewController(detilVc, animated: true)
+        
+    }
+ 
+}
+
+//MARK: - HeaderReusableViewDelegate
+extension HomeNewsController: HeaderReusableViewDelegate {
+    func didSelectTabs(type: HeaderTabsType) {
+        viewModel.didSelectHeaderCategoryTab(type)
+    }
+    
+}
+
+//MARK: - NewsViewCellDelegate
+extension HomeNewsController: NewsViewCellDelegate {
+    func openNewsURLTapped(url: String?) {
+        let safariVC = SFSafariViewController(url: URL(string: url ?? "")!)
+        navigationController?.pushViewController(safariVC, animated: true)
+    }
     
     
 }

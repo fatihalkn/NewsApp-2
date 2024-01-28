@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,14 +19,14 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNB-Jm-zEg">
                         <rect key="frame" x="0.0" y="0.0" width="151" height="56"/>
-                        <color key="backgroundColor" red="0.1529411765" green="0.2156862745" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" systemColor="systemGrayColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="YNB-Jm-zEg" secondAttribute="trailing" id="D1C-v9-193"/>
                 <constraint firstItem="YNB-Jm-zEg" firstAttribute="width" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="width" id="FIT-eH-SWK"/>
@@ -41,4 +42,9 @@
             <point key="canvasLocation" x="107.63358778625954" y="-11.267605633802818"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
