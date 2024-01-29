@@ -10,7 +10,7 @@ import SafariServices
 
 
 class HomeNewsController: UIViewController {
-
+    
     @IBOutlet weak var homeCollectionView: UICollectionView!
     
     
@@ -42,7 +42,7 @@ class HomeNewsController: UIViewController {
             guard let header = self?.homeCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: IndexPath(item: 0, section: 0)) as? HeaderReusableView else { return }
             header.selectTabCell(beforeTabType: beforeTabType, afterTabType: afterTabType)
         }
-    
+        
     }
     
     func setupDelegets() {
@@ -53,11 +53,11 @@ class HomeNewsController: UIViewController {
     func setupRegister() {
         homeCollectionView.register(UINib(nibName: HeaderReusableView.identifier,
                                           bundle: nil),
-                                          forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                          withReuseIdentifier: HeaderReusableView.identifier)
+                                    forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                    withReuseIdentifier: HeaderReusableView.identifier)
         homeCollectionView.register(UINib(nibName: NewsViewCell.identifier,
                                           bundle: nil),
-                                          forCellWithReuseIdentifier: NewsViewCell.identifier)
+                                    forCellWithReuseIdentifier: NewsViewCell.identifier)
     }
     
 }
@@ -76,11 +76,11 @@ extension HomeNewsController: UICollectionViewDelegate, UICollectionViewDataSour
                 header.configure(data: viewModel.homeNews?.articles ?? [], currentSelectedTabType: viewModel.currentSelectedHeaderCategoryType)
                 return header
             default:
-              return  UICollectionReusableView()
+                return  UICollectionReusableView()
             }
             
         default:
-           return UICollectionReusableView()
+            return UICollectionReusableView()
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -114,11 +114,22 @@ extension HomeNewsController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detilVc = NewsDetailController()
-        navigationController?.pushViewController(detilVc, animated: true)
+        if let selectedNews = viewModel.homeNews?.articles?[indexPath.item] {
+            let detilVc = NewsDetailController()
+            detilVc.article = selectedNews
+            detilVc.modalTransitionStyle = .coverVertical
+            navigationController?.pushViewController(detilVc, animated: true)
+            
+        } else {
+            print("HATA")
+            
+        }
+        
+        
+        
         
     }
- 
+    
 }
 
 //MARK: - HeaderReusableViewDelegate

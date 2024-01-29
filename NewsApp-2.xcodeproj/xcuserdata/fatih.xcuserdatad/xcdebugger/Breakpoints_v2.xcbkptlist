@@ -7,17 +7,191 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "02DA3638-5E4B-4C82-BB9B-611B12F5CA62"
+            uuid = "476CBE25-DB0D-4E64-8CB7-F7E5664BDBE1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApp-2/Scene/HomeNews/HomeNewsController.swift"
+            filePath = "NewsApp-2/Scene/NewsDetail/NewsDetailController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "congfigure()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "476CBE25-DB0D-4E64-8CB7-F7E5664BDBE1 - 6b83c3d7fedb62a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsApp_2.NewsDetailController.congfigure(data: Swift.Optional&lt;NewsApp_2.Article&gt;) -&gt; ()"
+                  moduleName = "NewsApp-2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/AdvancedNewsApp/NewsApp-2/NewsApp-2/Scene/NewsDetail/NewsDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "476CBE25-DB0D-4E64-8CB7-F7E5664BDBE1 - 6b83c3d7fedb62a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsApp_2.NewsDetailController.congfigure(data: Swift.Optional&lt;NewsApp_2.Article&gt;) -&gt; ()"
+                  moduleName = "NewsApp-2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/AdvancedNewsApp/NewsApp-2/NewsApp-2/Scene/NewsDetail/NewsDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "476CBE25-DB0D-4E64-8CB7-F7E5664BDBE1 - 6ac78b6ac89802f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsApp_2.NewsDetailController.congfigure() -&gt; ()"
+                  moduleName = "NewsApp-2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/AdvancedNewsApp/NewsApp-2/NewsApp-2/Scene/NewsDetail/NewsDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "476CBE25-DB0D-4E64-8CB7-F7E5664BDBE1 - 6ac78b6ac89802f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsApp_2.NewsDetailController.congfigure() -&gt; ()"
+                  moduleName = "NewsApp-2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/AdvancedNewsApp/NewsApp-2/NewsApp-2/Scene/NewsDetail/NewsDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "208">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D7E4FB9D-5C78-457A-998C-E3BB37BC9241"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsApp-2/Scene/NewsDetail/NewsDetailController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "congfigure()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ECC7B16B-A4CE-4199-B363-47CEECF603E9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsApp-2/Scene/NewsDetail/NewsDetailController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ECC7B16B-A4CE-4199-B363-47CEECF603E9 - e5bbc74400294ce2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsApp_2.NewsDetailController.viewDidLoad() -&gt; ()"
+                  moduleName = "NewsApp-2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/AdvancedNewsApp/NewsApp-2/NewsApp-2/Scene/NewsDetail/NewsDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "ECC7B16B-A4CE-4199-B363-47CEECF603E9 - e5bbc74400294c81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsApp_2.NewsDetailController.viewDidLoad() -&gt; ()"
+                  moduleName = "NewsApp-2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/AdvancedNewsApp/NewsApp-2/NewsApp-2/Scene/NewsDetail/NewsDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "30841C30-73A4-4DF9-A8C5-C10076533509"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsApp-2/Scene/NewsDetail/NewsDetailController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "congfigure()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "30841C30-73A4-4DF9-A8C5-C10076533509 - 6b83c3d7fedb722"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsApp_2.NewsDetailController.congfigure(data: Swift.Optional&lt;NewsApp_2.Article&gt;) -&gt; ()"
+                  moduleName = "NewsApp-2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/AdvancedNewsApp/NewsApp-2/NewsApp-2/Scene/NewsDetail/NewsDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1112">
+               </Location>
+               <Location
+                  uuid = "30841C30-73A4-4DF9-A8C5-C10076533509 - 6ac78b6ac89803f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsApp_2.NewsDetailController.congfigure() -&gt; ()"
+                  moduleName = "NewsApp-2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/AdvancedNewsApp/NewsApp-2/NewsApp-2/Scene/NewsDetail/NewsDetailController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "2140">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

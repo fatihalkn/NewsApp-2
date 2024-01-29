@@ -10,6 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsDetailController" customModule="NewsApp_2" customModuleProvider="target">
             <connections>
+                <outlet property="newsDescription" destination="Ukj-hq-cmA" id="AVS-oF-tko"/>
+                <outlet property="newsImageView" destination="GNm-g2-AzY" id="gVV-fg-Aaq"/>
+                <outlet property="newsTitle" destination="fUI-Zl-7V1" id="TLz-7a-dzf"/>
+                <outlet property="newsWriter" destination="CvE-Oh-FyO" id="x17-m5-u6e"/>
+                <outlet property="newsYear" destination="YZh-Sn-LNS" id="BSx-Rt-xiP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +22,128 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ksy-0g-GAM">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lDm-e0-cXh">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="1675"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6UV-F2-7H8">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GNm-g2-AzY">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
+                                            <color key="backgroundColor" red="0.61367982629999995" green="0.3783769011" blue="0.1194165871" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="400" id="Aqx-UJ-75p"/>
+                                        <constraint firstItem="GNm-g2-AzY" firstAttribute="leading" secondItem="6UV-F2-7H8" secondAttribute="leading" id="DbX-5c-rgK"/>
+                                        <constraint firstItem="GNm-g2-AzY" firstAttribute="top" secondItem="6UV-F2-7H8" secondAttribute="top" id="hcU-ru-sKH"/>
+                                        <constraint firstAttribute="bottom" secondItem="GNm-g2-AzY" secondAttribute="bottom" id="huS-M6-7eS"/>
+                                        <constraint firstAttribute="trailing" secondItem="GNm-g2-AzY" secondAttribute="trailing" id="wL9-8Q-hdN"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAF-ZW-HN1">
+                                    <rect key="frame" x="0.0" y="400" width="393" height="1275"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="başlık" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUI-Zl-7V1">
+                                            <rect key="frame" x="10" y="20" width="373" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="Caq-Kj-XHx"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yazar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvE-Oh-FyO">
+                                            <rect key="frame" x="10" y="170" width="188.66666666666666" height="20.333333333333343"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11-11-11" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZh-Sn-LNS">
+                                            <rect key="frame" x="10" y="170" width="373" height="20.333333333333343"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukj-hq-cmA">
+                                            <rect key="frame" x="10" y="240.33333333333337" width="373" height="1034.6666666666665"/>
+                                            <mutableString key="text">Unable to simultaneously satisfy constraints.
+	Probably at least one of the constraints in the following list is one you don't want. 
+	Try this: 
+		(1) look at each constraint and try to figure out which you don't expect; 
+		(2) find the code that added the unwanted constraint or constraints and fix it. 
+(
+    "&lt;NSLayoutConstraint:0x60000213a490 V:|-(0)-[UICollectionView:0x104856e00]   (active, names: '|':NewsApp_2.HeaderReusableView:0x103f1a8e0 )&gt;",
+    "&lt;NSLayoutConstraint:0x60000213a4e0 UICollectionView:0x104856e00.height == 0.82199*NewsApp_2.HeaderReusableView:0x103f1a8e0.height   (active)&gt;",
+    "&lt;NSLayoutConstraint:0x60000213a800 V:[UICollectionView:0x106031200]-(0)-|   (active, names: '|':NewsApp_2.HeaderReusableView:0x103f1a8e0 )&gt;",
+    "&lt;NSLayoutConstraint:0x60000213a850 UICollectionView:0x106031200.height == 0.136126*NewsApp_2.HeaderReusableView:0x103f1a8e0.height   (active)&gt;",
+    "&lt;NSLayoutConstraint:0x60000213a8a0 V:[UICollectionView:0x104856e00]-(8)-[UICollectionView:0x106031200]   (active)&gt;",
+    "&lt;NSLayoutConstraint:0x600002137cf0 'UIView-Encapsulated-Layout-Height' NewsApp_2.HeaderReusableView:0x103f1a8e0.height == 200   (active)&gt;"
+)
+
+Will attempt to recover by breaking constraint 
+&lt;NSLayoutConstraint:0x60000213a8a0 V:[UICollectionView:0x104856e00]-(8)-[UICollectionView:0x106031200]   (active)&gt;
+
+Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.
+The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in &lt;UIKitCore/UIView.h&gt; may also be helpful.
+https://newsapi.org/v2/top-headlines?country=us&amp;category=technology&amp;apiKey=a9f3b2886185493a9a12b08e04272bce</mutableString>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Ukj-hq-cmA" firstAttribute="leading" secondItem="WAF-ZW-HN1" secondAttribute="leading" constant="10" id="8c8-AZ-jYE"/>
+                                        <constraint firstItem="YZh-Sn-LNS" firstAttribute="centerX" secondItem="fUI-Zl-7V1" secondAttribute="centerX" id="Kd9-do-joe"/>
+                                        <constraint firstItem="CvE-Oh-FyO" firstAttribute="leading" secondItem="WAF-ZW-HN1" secondAttribute="leading" constant="10" id="Ntr-pq-is2"/>
+                                        <constraint firstAttribute="trailing" secondItem="YZh-Sn-LNS" secondAttribute="trailing" constant="10" id="OkX-UN-TQx"/>
+                                        <constraint firstItem="CvE-Oh-FyO" firstAttribute="trailing" secondItem="fUI-Zl-7V1" secondAttribute="centerX" constant="2" id="WrM-ca-pwj"/>
+                                        <constraint firstItem="CvE-Oh-FyO" firstAttribute="top" secondItem="fUI-Zl-7V1" secondAttribute="bottom" constant="50" id="b8C-ft-TP0"/>
+                                        <constraint firstItem="Ukj-hq-cmA" firstAttribute="top" secondItem="CvE-Oh-FyO" secondAttribute="bottom" constant="50" id="bfe-HE-nW7"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ukj-hq-cmA" secondAttribute="bottom" id="fT0-dp-c0w"/>
+                                        <constraint firstItem="fUI-Zl-7V1" firstAttribute="top" secondItem="WAF-ZW-HN1" secondAttribute="top" constant="20" id="nfQ-LO-0rY"/>
+                                        <constraint firstItem="YZh-Sn-LNS" firstAttribute="top" secondItem="fUI-Zl-7V1" secondAttribute="bottom" constant="50" id="tzB-UK-cnp"/>
+                                        <constraint firstItem="fUI-Zl-7V1" firstAttribute="leading" secondItem="WAF-ZW-HN1" secondAttribute="leading" constant="10" id="vg0-Jj-saX"/>
+                                        <constraint firstAttribute="trailing" secondItem="fUI-Zl-7V1" secondAttribute="trailing" constant="10" id="wn5-nx-kJn"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ukj-hq-cmA" secondAttribute="trailing" constant="10" id="zFC-EF-3PB"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="WAF-ZW-HN1" secondAttribute="trailing" id="P4x-bX-ldJ"/>
+                                <constraint firstAttribute="bottom" secondItem="WAF-ZW-HN1" secondAttribute="bottom" id="Xlx-QF-2hj"/>
+                                <constraint firstItem="WAF-ZW-HN1" firstAttribute="top" secondItem="6UV-F2-7H8" secondAttribute="bottom" id="eep-UG-qPv"/>
+                                <constraint firstItem="WAF-ZW-HN1" firstAttribute="leading" secondItem="lDm-e0-cXh" secondAttribute="leading" id="ifg-Te-Mgo"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="lDm-e0-cXh" firstAttribute="top" secondItem="Ksy-0g-GAM" secondAttribute="top" id="8nq-97-17p"/>
+                        <constraint firstItem="lDm-e0-cXh" firstAttribute="width" secondItem="Ksy-0g-GAM" secondAttribute="width" id="Afd-3S-jSF"/>
+                        <constraint firstAttribute="trailing" secondItem="lDm-e0-cXh" secondAttribute="trailing" id="FpD-zZ-398"/>
+                        <constraint firstItem="lDm-e0-cXh" firstAttribute="height" secondItem="Ksy-0g-GAM" secondAttribute="height" priority="250" id="ZXf-IB-fWC"/>
+                        <constraint firstItem="lDm-e0-cXh" firstAttribute="leading" secondItem="Ksy-0g-GAM" secondAttribute="leading" id="dP3-kv-C72"/>
+                        <constraint firstAttribute="bottom" secondItem="lDm-e0-cXh" secondAttribute="bottom" id="pyF-rL-DsM"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="287.78625954198475" y="-27.464788732394368"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ksy-0g-GAM" secondAttribute="trailing" id="EWJ-3R-6Kw"/>
+                <constraint firstItem="Ksy-0g-GAM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hLz-Ge-c0H"/>
+                <constraint firstItem="Ksy-0g-GAM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vdx-P0-eud"/>
+                <constraint firstAttribute="bottom" secondItem="Ksy-0g-GAM" secondAttribute="bottom" id="w6H-ug-Zsj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="180.91603053435114" y="-325.35211267605638"/>
         </view>
     </objects>
     <resources>
