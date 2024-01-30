@@ -8,9 +8,13 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
 
 
 class RegisterController: UIViewController {
+    
+    
+    var docRef: DocumentReference!
     @IBOutlet weak var firsNameTxtField: UITextField!
     @IBOutlet weak var lastNameTxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
@@ -19,6 +23,7 @@ class RegisterController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        docRef = Firestore.firestore().document("Users/NewsApp")
         buttonRadius()
     }
     
@@ -43,6 +48,21 @@ class RegisterController: UIViewController {
             }
         }
         
+        guard let firsNameTxtField = firsNameTxtField.text, !firsNameTxtField.isEmpty else { return }
+        guard let lastNameTxtField = lastNameTxtField.text, !lastNameTxtField.isEmpty else { return }
+        guard let emailTxtField = emailTxtField.text, !emailTxtField.isEmpty else { return }
+        guard let passwordTxtField = passwordTxtField.text, !passwordTxtField.isEmpty else { return }
+        let dataSave: [String: Any] = ["name": firsNameTxtField,
+                                       "lastname": lastNameTxtField,
+                                       "email": emailTxtField,
+                                       "password": passwordTxtField]
+        docRef.setData(dataSave) { (error) in
+            if let error = error {
+                print("error")
+            } else {
+                print("Data kaydedildi")
+            }
+        }
     }
     
     

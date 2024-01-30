@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
 
 class LoginController: UIViewController {
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var errorLink: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +33,27 @@ class LoginController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
-        pushHomeNews()
+        guard let email = emailTxtField.text else { return }
+        guard let password = passwordTxtField.text else { return }
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            guard let strongSelf = self else { return }
+            if(error != nil) {
+                let alert = UIAlertController(title: "Login Error", message: "Your email or password is incorrect!", preferredStyle: .alert)
+                self?.present(alert, animated: true)
+                let okButton = UIAlertAction(title: "OK", style: .default)
+                alert.addAction(okButton)
+                return
+                
+            } else {
+                let alert = UIAlertController(title: "Login successful!", message: "If you press the arrow button, you will be directed to your home page.", preferredStyle: .alert)
+                self?.present(alert, animated: true)
+                let okButton = UIAlertAction(title: "OK", style: .default, handler: { action in
+                    self?.pushHomeNews()
+                })
+                alert.addAction(okButton)
+            }
+        }
+        
     }
     
     

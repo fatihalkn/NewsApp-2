@@ -45,6 +45,11 @@ class HomeNewsController: UIViewController {
         
     }
     
+    @IBAction func savePage(_ sender: UIButton) {
+        let vc = SaveNewsController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func setupDelegets() {
         homeCollectionView.dataSource = self
         homeCollectionView.delegate = self

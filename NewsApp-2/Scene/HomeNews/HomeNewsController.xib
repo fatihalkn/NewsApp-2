@@ -28,6 +28,15 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F3-Q1-ImO">
+                    <rect key="frame" x="302" y="130" width="75" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                    <connections>
+                        <action selector="savePage:" destination="-1" eventType="touchUpInside" id="iJl-jN-lZL"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -37,6 +46,7 @@
                 <constraint firstItem="nHK-CS-LjT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gx0-ov-Tbq"/>
                 <constraint firstItem="nHK-CS-LjT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sGY-qJ-iA2"/>
             </constraints>
+            <nil key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="58" y="21"/>
         </view>
     </objects>

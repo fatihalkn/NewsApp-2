@@ -15,6 +15,7 @@
                 <outlet property="newsTitle" destination="fUI-Zl-7V1" id="TLz-7a-dzf"/>
                 <outlet property="newsWriter" destination="CvE-Oh-FyO" id="x17-m5-u6e"/>
                 <outlet property="newsYear" destination="YZh-Sn-LNS" id="BSx-Rt-xiP"/>
+                <outlet property="saveButton" destination="3jE-7s-CuZ" id="ygI-es-5Ot"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,11 +38,24 @@
                                             <color key="backgroundColor" red="0.61367982629999995" green="0.3783769011" blue="0.1194165871" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jE-7s-CuZ">
+                                            <rect key="frame" x="300" y="0.0" width="93" height="100"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.down" catalog="system"/>
+                                            <connections>
+                                                <action selector="saveButton:" destination="-1" eventType="touchUpInside" id="Lbj-9U-N9I"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="3jE-7s-CuZ" secondAttribute="trailing" id="5kI-Gu-Vh4"/>
                                         <constraint firstAttribute="height" constant="400" id="Aqx-UJ-75p"/>
                                         <constraint firstItem="GNm-g2-AzY" firstAttribute="leading" secondItem="6UV-F2-7H8" secondAttribute="leading" id="DbX-5c-rgK"/>
+                                        <constraint firstItem="3jE-7s-CuZ" firstAttribute="leading" secondItem="6UV-F2-7H8" secondAttribute="leading" constant="300" id="WKe-HQ-jyu"/>
+                                        <constraint firstItem="3jE-7s-CuZ" firstAttribute="top" secondItem="6UV-F2-7H8" secondAttribute="top" id="aGA-CA-CzR"/>
+                                        <constraint firstAttribute="bottom" secondItem="3jE-7s-CuZ" secondAttribute="bottom" constant="300" id="eOU-zl-ixA"/>
                                         <constraint firstItem="GNm-g2-AzY" firstAttribute="top" secondItem="6UV-F2-7H8" secondAttribute="top" id="hcU-ru-sKH"/>
                                         <constraint firstAttribute="bottom" secondItem="GNm-g2-AzY" secondAttribute="bottom" id="huS-M6-7eS"/>
                                         <constraint firstAttribute="trailing" secondItem="GNm-g2-AzY" secondAttribute="trailing" id="wL9-8Q-hdN"/>
@@ -73,7 +87,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukj-hq-cmA">
                                             <rect key="frame" x="10" y="240.33333333333337" width="373" height="1034.6666666666665"/>
-                                            <mutableString key="text">Unable to simultaneously satisfy constraints.
+                                            <string key="text">Unable to simultaneously satisfy constraints.
 	Probably at least one of the constraints in the following list is one you don't want. 
 	Try this: 
 		(1) look at each constraint and try to figure out which you don't expect; 
@@ -92,7 +106,7 @@ Will attempt to recover by breaking constraint
 
 Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.
 The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in &lt;UIKitCore/UIView.h&gt; may also be helpful.
-https://newsapi.org/v2/top-headlines?country=us&amp;category=technology&amp;apiKey=a9f3b2886185493a9a12b08e04272bce</mutableString>
+https://newsapi.org/v2/top-headlines?country=us&amp;category=technology&amp;apiKey=a9f3b2886185493a9a12b08e04272bce</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -147,6 +161,7 @@ https://newsapi.org/v2/top-headlines?country=us&amp;category=technology&amp;apiK
         </view>
     </objects>
     <resources>
+        <image name="square.and.arrow.down" catalog="system" width="112" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

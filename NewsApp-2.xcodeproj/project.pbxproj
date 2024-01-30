@@ -50,6 +50,9 @@
 		3DA326DD2B667DE200B85667 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3DA326DC2B667DE200B85667 /* SDWebImage */; };
 		3DA326E62B66A9F300B85667 /* NewsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA326E42B66A9F300B85667 /* NewsDetailController.swift */; };
 		3DA326E72B66A9F300B85667 /* NewsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA326E52B66A9F300B85667 /* NewsDetailController.xib */; };
+		3DA326E92B68E8C900B85667 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3DA326E82B68E8C900B85667 /* FirebaseFirestore */; };
+		3DA326EC2B694F9200B85667 /* SaveNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA326EA2B694F9100B85667 /* SaveNewsController.swift */; };
+		3DA326ED2B694F9200B85667 /* SaveNewsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA326EB2B694F9100B85667 /* SaveNewsController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,8 @@
 		3DA326D92B665B4800B85667 /* NewsCellHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellHelper.swift; sourceTree = "<group>"; };
 		3DA326E42B66A9F300B85667 /* NewsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailController.swift; sourceTree = "<group>"; };
 		3DA326E52B66A9F300B85667 /* NewsDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailController.xib; sourceTree = "<group>"; };
+		3DA326EA2B694F9100B85667 /* SaveNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNewsController.swift; sourceTree = "<group>"; };
+		3DA326EB2B694F9100B85667 /* SaveNewsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveNewsController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DA3269D2B64F84900B85667 /* FirebaseAnalyticsSwift in Frameworks */,
+				3DA326E92B68E8C900B85667 /* FirebaseFirestore in Frameworks */,
 				3DA326992B64F84900B85667 /* FirebaseAnalytics in Frameworks */,
 				3DA326A92B653F9F00B85667 /* FirebaseAnalytics in Frameworks */,
 				3DA326AB2B653F9F00B85667 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
@@ -171,6 +177,7 @@
 		3DA326742B64F29500B85667 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				3DA326EE2B694FA100B85667 /* SaveNews */,
 				3DA326E32B66A9D100B85667 /* NewsDetail */,
 				3DA326772B64F2C100B85667 /* Login */,
 				3DA326B52B6542C200B85667 /* HomeNews */,
@@ -334,6 +341,15 @@
 			path = NewsDetail;
 			sourceTree = "<group>";
 		};
+		3DA326EE2B694FA100B85667 /* SaveNews */ = {
+			isa = PBXGroup;
+			children = (
+				3DA326EA2B694F9100B85667 /* SaveNewsController.swift */,
+				3DA326EB2B694F9100B85667 /* SaveNewsController.xib */,
+			);
+			path = SaveNews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -363,6 +379,7 @@
 				3DA326B02B653F9F00B85667 /* FirebaseAppCheck */,
 				3DA326B32B65415B00B85667 /* FirebaseAuth */,
 				3DA326DC2B667DE200B85667 /* SDWebImage */,
+				3DA326E82B68E8C900B85667 /* FirebaseFirestore */,
 			);
 			productName = "NewsApp-2";
 			productReference = 3DA3265A2B64F1F400B85667 /* NewsApp-2.app */;
@@ -414,6 +431,7 @@
 				3DA326BA2B6542F200B85667 /* HomeNewsController.xib in Resources */,
 				3DA3267F2B64F30500B85667 /* RegisterController.xib in Resources */,
 				3DA326962B64F7C500B85667 /* GoogleService-Info.plist in Resources */,
+				3DA326ED2B694F9200B85667 /* SaveNewsController.xib in Resources */,
 				3DA326CE2B65491200B85667 /* HeaderTabsCell.xib in Resources */,
 				3DA3267B2B64F2E600B85667 /* HomeLoginController.xib in Resources */,
 				3DA3266A2B64F1F600B85667 /* LaunchScreen.storyboard in Resources */,
@@ -439,6 +457,7 @@
 				3DA326D52B665AD500B85667 /* HomeNewsViewModel.swift in Sources */,
 				3DA326CD2B65491200B85667 /* HeaderTabsCell.swift in Sources */,
 				3DA326892B64F3D900B85667 /* NetworkHelper.swift in Sources */,
+				3DA326EC2B694F9200B85667 /* SaveNewsController.swift in Sources */,
 				3DA3268F2B64F42D00B85667 /* TabsHelper.swift in Sources */,
 				3DA326872B64F3B000B85667 /* NetworkManager.swift in Sources */,
 				3DA3267E2B64F30500B85667 /* RegisterController.swift in Sources */,
@@ -738,6 +757,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DA326DB2B667DE200B85667 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		3DA326E82B68E8C900B85667 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DA326972B64F84900B85667 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
