@@ -21,6 +21,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonRadius()
+        checkLogginUserControl()
     }
     
     func pushHomeNews() {
@@ -56,6 +57,12 @@ class LoginController: UIViewController {
         
     }
     
+    func checkLogginUserControl() {
+         Auth.auth().addStateDidChangeListener { auth, user in
+          
+        }
+        
+    }
     
     
     

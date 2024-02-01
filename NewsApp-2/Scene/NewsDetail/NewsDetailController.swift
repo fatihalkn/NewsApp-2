@@ -26,9 +26,7 @@ class NewsDetailController: UIViewController {
         super.viewDidLoad()
         congfigure()
         fetchFavoriteNews()
-      // firebaseden favori lsitesini çek
-        
-        // gelen favori listesindeki titler arasından buradaki articlein title'i ile eşleşiyorsa buton kırmızı eşleşmiyor beyaz
+      
     }
     
     func isNewsFavorite() -> Bool {
@@ -60,11 +58,16 @@ class NewsDetailController: UIViewController {
     }
     
     func deleteNews() {
-        db.collection("News").document("News").delete { error in
+        db.collection("News").whereField("newsTitle", isEqualTo: article?.title ?? "").getDocuments { snapshot, error in
             if let error = error {
-                print("silme işlmi başarısız")
-            } else {
-                print("silme işlemi başarılı")
+                print("Silme işlemi başarısız: \(error.localizedDescription)")
+
+            }
+            
+            for dociment in snapshot!.documents {
+                dociment.reference.delete()
+                print("Haber başarıyla silindi.")
+                
             }
         }
     }

@@ -57,7 +57,6 @@ class SaveNewsController: UIViewController {
                 let pulishat = data["newsYear"] as? String
                 let ımage = data["newsImageView"] as? String
                 let documentId = document.documentID
-                print("documentId", documentId)
                 let news = Article(source: nil, author: nil, title: title, description: description, url: nil, urlToImage: ımage, publishedAt: pulishat, content: nil)
                 self.newsArry.append(news)
                 
