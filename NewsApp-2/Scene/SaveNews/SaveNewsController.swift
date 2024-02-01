@@ -12,6 +12,8 @@ import SDWebImage
 
 class SaveNewsController: UIViewController {
     
+    
+    
     var newsArry: [Article] = []
     let db = Firestore.firestore()
     @IBOutlet weak var saveNewsCollectionView: UICollectionView!
@@ -20,12 +22,14 @@ class SaveNewsController: UIViewController {
         super.viewDidLoad()
         setupDelegate()
         setupRegister()
-        fetchFireStoreNews { (newsArray) in
-            for _ in newsArray {
-            }
-        }
+        fetchFireStoreNews()
+        
         
     }
+    
+   
+    
+    
     
     func setupRegister() {
         saveNewsCollectionView.register(UINib(nibName: NewsViewCell.identifier, bundle: nil),forCellWithReuseIdentifier: NewsViewCell.identifier)
@@ -38,36 +42,34 @@ class SaveNewsController: UIViewController {
         
     }
     
-    func fetchFireStoreNews(completion: @escaping ([Article]) -> Void) {
+    
+    func fetchFireStoreNews() {
         db.collection("News").getDocuments { snapshot, error in
             if let error = error {
                 print("Haberleri alma hatası: \(error.localizedDescription)")
-                completion([])
                 return
             }
             
-            
             for document in snapshot!.documents {
                 let data = document.data()
-                print("Firestore Data: \(data)")
                 let title = data["newsTitle"] as? String
                 let description = data["newsDescription"] as? String
                 let pulishat = data["newsYear"] as? String
                 let ımage = data["newsImageView"] as? String
-                print("URL To Image: \(ımage)")
-                
+                let documentId = document.documentID
+                print("documentId", documentId)
                 let news = Article(source: nil, author: nil, title: title, description: description, url: nil, urlToImage: ımage, publishedAt: pulishat, content: nil)
                 self.newsArry.append(news)
-            }
-            DispatchQueue.main.async {
-                self.saveNewsCollectionView.reloadData()
                 
             }
-            completion(self.newsArry)
             
+            DispatchQueue.main.async {
+                self.saveNewsCollectionView.reloadData()
+            }
         }
-        
     }
+    
+    
     
 }
 
@@ -87,6 +89,5 @@ extension SaveNewsController: UICollectionViewDataSource, UICollectionViewDelega
         let cellHeight: CGFloat = 200
         return CGSize(width: cellWidth, height: cellHeight)
     }
-    
     
 }

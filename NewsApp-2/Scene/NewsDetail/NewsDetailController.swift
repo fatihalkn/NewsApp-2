@@ -10,7 +10,9 @@ import SDWebImage
 import Firebase
 import FirebaseFirestore
 
-class NewsDetailController: UIViewController {  
+class NewsDetailController: UIViewController {
+    
+    var favoriteNews: [Article] = []
     let db = Firestore.firestore()
     var article: Article?
     @IBOutlet weak var newsWriter: UILabel!
@@ -19,31 +21,87 @@ class NewsDetailController: UIViewController {
     @IBOutlet weak var newsYear: UILabel!
     @IBOutlet weak var newsDescription: UILabel!
     @IBOutlet weak var saveButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         congfigure()
+        fetchFavoriteNews()
+      // firebaseden favori lsitesini çek
+        
+        // gelen favori listesindeki titler arasından buradaki articlein title'i ile eşleşiyorsa buton kırmızı eşleşmiyor beyaz
     }
     
+    func isNewsFavorite() -> Bool {
+        let returnValue = favoriteNews.map({$0.title}).contains(where: {$0 == article?.title})
+        return returnValue
+    }
+    
+    
     func addNews() {
-        db.collection("News").addDocument(data: ["newsImageView": article?.urlToImage ?? "",
+        var ref: DocumentReference?
+       ref = db.collection("News").addDocument(data: ["newsImageView": article?.urlToImage ?? "",
                                                  "newsTitle": article?.title ?? "",
                                                  "newsYear": article?.publishedAt ?? "",
                                                  "newsDescription": article?.description ?? ""])
+        
         { error in
             if let error = error {
                 print("Haber kaydetme hatası: \(error.localizedDescription)")
 
             } else {
-                print("Haber başarıyla kaydedildi.")
+                if let docID = ref?.documentID {
+                    print("Haber başarıyla kaydedildi DocID: \(docID).")
+
+                } else {
+                    print("Document ID alınamadı.")
+                }
+            }
+        }
+    }
+    
+    func deleteNews() {
+        db.collection("News").document("News").delete { error in
+            if let error = error {
+                print("silme işlmi başarısız")
+            } else {
+                print("silme işlemi başarılı")
+            }
+        }
+    }
+    
+    func fetchFavoriteNews() {
+        db.collection("News").getDocuments { snapshot, error in
+            if let error = error {
+                print("Favoriye eklenen haberler alınamadı \(error)")
+                return
+            }
+            
+            for document in snapshot!.documents {
+                let data = document.data()
+                let title = data["newsTitle"] as? String
+                let news = Article(source: nil, author: nil, title: title, description: nil, url: nil, urlToImage: nil, publishedAt: nil, content: nil)
+                self.favoriteNews.append(news)
+            }
+            
+            if self.isNewsFavorite() {
+                self.saveButton.tintColor = UIColor.red
+            } else {
+                self.saveButton.tintColor = UIColor.white
             }
             
         }
     }
-
     
     @IBAction func saveButton(_ sender: UIButton) {
-        addNews()
-        
+        if sender.tintColor == UIColor.white {
+            sender.tintColor = UIColor.red
+            addNews()
+        } else {
+            sender.tintColor = UIColor.white
+            deleteNews()
+            
+            
+        }
     }
     
     func congfigure() {
@@ -57,8 +115,5 @@ class NewsDetailController: UIViewController {
         } else {
           print("hata")
         }
-
     }
-   
-
 }

@@ -24,7 +24,7 @@ class LoginController: UIViewController {
     }
     
     func pushHomeNews() {
-        let homeNewsController = HomeNewsController()
+        let homeNewsController = TabController()
         navigationController?.pushViewController(homeNewsController, animated: true)
     }
     
