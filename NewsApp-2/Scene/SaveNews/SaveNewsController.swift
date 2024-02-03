@@ -10,6 +10,7 @@ import SDWebImage
 
 class SaveNewsController: UIViewController {
     
+    let viewModel = HomeNewsViewModel()
     var savedNews: [Article] = []
     
     @IBOutlet weak var saveNewsCollectionView: UICollectionView!
@@ -70,6 +71,15 @@ extension SaveNewsController: UICollectionViewDataSource, UICollectionViewDelega
         let cellWidth: CGFloat = collectionView.frame.width
         let cellHeight: CGFloat = 200
         return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         let selectNews = savedNews[indexPath.item]
+          let detailVC = NewsDetailController()
+            detailVC.article = selectNews
+            detailVC.modalTransitionStyle = .coverVertical
+            navigationController?.pushViewController(detailVC, animated: true)
+        
     }
     
 }

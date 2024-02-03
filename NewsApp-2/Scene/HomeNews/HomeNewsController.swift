@@ -21,6 +21,8 @@ class HomeNewsController: UIViewController {
         setupDelegets()
         setupRegister()
         viewModelConfigure()
+        customNavigationController()
+        
         
     }
     
@@ -45,9 +47,18 @@ class HomeNewsController: UIViewController {
         
     }
     
-    @IBAction func savePage(_ sender: UIButton) {
-        let vc = SaveNewsController()
-        navigationController?.pushViewController(vc, animated: true)
+
+   
+    
+    func customNavigationController() {
+        self.navigationItem.title = "Home Page"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action:#selector(didTapButton))
+        
+    }
+    
+    @objc private func didTapButton() {
+        let vc = UserProfileViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setupDelegets() {
