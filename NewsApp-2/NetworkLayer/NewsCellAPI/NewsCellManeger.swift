@@ -17,7 +17,6 @@ protocol NewsCellProtocol {
 
 
 class NewsCellManeger: NewsCellProtocol {
-    
     static let shared = NewsCellManeger()
     
     func getNewsTechnology(complete: @escaping (NewsModel?, Error?) -> ()) {

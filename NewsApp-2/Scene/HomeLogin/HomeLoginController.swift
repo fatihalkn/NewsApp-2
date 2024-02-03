@@ -35,7 +35,6 @@ class HomeLoginController: UIViewController {
     
     @IBAction func loginButton(_ sender: UIButton) {
         pushLoginPage()
-        
     }
     
 

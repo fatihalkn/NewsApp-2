@@ -13,16 +13,15 @@ class TabController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let homeViewsController = HomeNewsController()
-        let saveNewsController = SaveNewsController()
+        let homeViewsController = UINavigationController(rootViewController: HomeNewsController())
+        let saveNewsController = UINavigationController(rootViewController: SaveNewsController())
         
         homeViewsController.title = "Home"
         saveNewsController.title = "Save"
         
-        self.setViewControllers([homeViewsController,saveNewsController], animated: false)
+        self.setViewControllers([homeViewsController, saveNewsController], animated: false)
         
         self.tabBarController?.tabBar.backgroundColor = .red
-        
         
         
     }

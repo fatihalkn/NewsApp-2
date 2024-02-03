@@ -6,9 +6,7 @@
 //
 
 import UIKit
-import FirebaseCore
-import FirebaseFirestore
-import FirebaseAuth
+
 
 class LoginController: UIViewController {
     @IBOutlet weak var emailTxtField: UITextField!
@@ -17,11 +15,10 @@ class LoginController: UIViewController {
     @IBOutlet weak var errorLink: UILabel!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonRadius()
-        checkLogginUserControl()
+        
     }
     
     func pushHomeNews() {
@@ -34,36 +31,29 @@ class LoginController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
-        guard let email = emailTxtField.text else { return }
-        guard let password = passwordTxtField.text else { return }
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-            guard let strongSelf = self else { return }
-            if(error != nil) {
-                let alert = UIAlertController(title: "Login Error", message: "Your email or password is incorrect!", preferredStyle: .alert)
-                self?.present(alert, animated: true)
-                let okButton = UIAlertAction(title: "OK", style: .default)
-                alert.addAction(okButton)
-                return
-                
-            } else {
-                let alert = UIAlertController(title: "Login successful!", message: "If you press the arrow button, you will be directed to your home page.", preferredStyle: .alert)
-                self?.present(alert, animated: true)
-                let okButton = UIAlertAction(title: "OK", style: .default, handler: { action in
-                    self?.pushHomeNews()
-                })
-                alert.addAction(okButton)
+        guard let email = emailTxtField.text, !email.isEmpty else {
+            showError(text: "Email boş bırakılamaz", image: nil, interaction: false, delay: nil)
+            return
+        }
+        
+        guard let password = passwordTxtField.text, !password.isEmpty else {
+            showError(text: "Şifre boş bırakılamaz", image: nil, interaction: false, delay: nil)
+            return
+        }
+        
+        showLoading(text: nil, interaction: false)
+        FirebaseManager.shared.signInUser(with: email, password: password) { result in
+            switch result {
+            case .success(_):
+                self.showSucceed(text: "Giriş işlemi başarılı", interaction: false, delay: nil)
+                self.pushHomeNews()
+            case .failure(let failure):
+                self.showError(text: "Giriş işlemi başarısız: \(failure.localizedDescription)", image: nil, interaction: false, delay: 2)
             }
         }
-        
-    }
-    
-    func checkLogginUserControl() {
-         Auth.auth().addStateDidChangeListener { auth, user in
-          
-        }
-        
     }
     
     
-    
+
 }
+

@@ -6,15 +6,9 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
-import FirebaseFirestore
-
 
 class RegisterController: UIViewController {
     
-    
-    var docRef: DocumentReference!
     @IBOutlet weak var firsNameTxtField: UITextField!
     @IBOutlet weak var lastNameTxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
@@ -23,7 +17,6 @@ class RegisterController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        docRef = Firestore.firestore().document("Users/NewsApp")
         buttonRadius()
     }
     
@@ -37,33 +30,57 @@ class RegisterController: UIViewController {
     }
     
     @IBAction func registerButton(_ sender: Any) {
-        if let email = emailTxtField.text, let password = passwordTxtField.text {
-            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    self.pushLoginPage()
-                }
-             
-            }
+        guard let firstName = firsNameTxtField.text, !firstName.isEmpty else {
+            showError(text: "İsim boş bırakılamaz", image: nil, interaction: false, delay: nil)
+            return
         }
         
-        guard let firsNameTxtField = firsNameTxtField.text, !firsNameTxtField.isEmpty else { return }
-        guard let lastNameTxtField = lastNameTxtField.text, !lastNameTxtField.isEmpty else { return }
-        guard let emailTxtField = emailTxtField.text, !emailTxtField.isEmpty else { return }
-        guard let passwordTxtField = passwordTxtField.text, !passwordTxtField.isEmpty else { return }
-        let dataSave: [String: Any] = ["name": firsNameTxtField,
-                                       "lastname": lastNameTxtField,
-                                       "email": emailTxtField,
-                                       "password": passwordTxtField]
-        docRef.setData(dataSave) { (error) in
-            if let error = error {
-                print("error")
-            } else {
-                print("Data kaydedildi")
+        guard let lastName = lastNameTxtField.text, !lastName.isEmpty else {
+            showError(text: "Soyisim boş bırakılamaz", image: nil, interaction: false, delay: nil)
+            return
+        }
+        
+        guard let email = emailTxtField.text, !email.isEmpty else {
+            showError(text: "Email boş bırakılamaz", image: nil, interaction: false, delay: nil)
+            return
+        }
+        
+        guard let password = passwordTxtField.text, !password.isEmpty else {
+            showError(text: "Şifre boş bırakılamaz", image: nil, interaction: false, delay: nil)
+            return
+        }
+        
+        showLoading(text: nil, interaction: false)
+        FirebaseManager.shared.signUpUser(with: email, password: password) { result in
+            switch result {
+            case .success(let userID):
+                if let userID {
+                    let userDocumentModel = FirebaseUserDocumentModel(userID: userID,
+                                                                      userName: firstName,
+                                                                      userEmail: email,
+                                                                      userSavedNews: [],
+                                                                      userTappedNews: [])
+
+                    FirebaseManager.shared.createUserDocument(userDocumentModel: userDocumentModel) { result in
+                        switch result {
+                        case .success(_):
+                            self.showSucceed(text: "Kayıt işlemi başarıyla tamamlandı", interaction: false, delay: nil)
+                        case .failure(let failure):
+                            self.showError(text: "Kayıt işlemi başarıyla tamamlandı ✅. Ancak Data Basei oluşturulamadı:❌ \(failure.localizedDescription) .",  image: nil, interaction: false, delay: nil)
+                        }
+                    }
+                    
+                    
+                } else {
+                    self.showError(text: "Kayıt işlemi başarıyla tamamlandı ✅. Ancak USER ID oluşturulamadı. ❌", image: nil, interaction: false, delay: nil)
+                }
+
+            case .failure(let failure):
+                self.showError(text: "Kayıt işlemi hatası: \(failure.localizedDescription)", image: nil, interaction: false, delay: 2)
             }
         }
     }
+    
     
     
 }

@@ -19,6 +19,7 @@ class HomeNewsViewModel {
     var currentSelectedHeaderCategoryType: HeaderTabsType = .business
     
     func getNewsTechnology() {
+        
         manager.getNewsTechnology { [weak self] news , error in
             if let error = error {
                 self?.errorCallback?(error.localizedDescription)
