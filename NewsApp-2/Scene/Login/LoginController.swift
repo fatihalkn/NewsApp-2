@@ -18,12 +18,18 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonRadius()
+        configreNav()
         
     }
     
     func pushHomeNews() {
         let homeNewsController = TabController()
-        navigationController?.pushViewController(homeNewsController, animated: true)
+        homeNewsController.modalPresentationStyle = .fullScreen
+        present(homeNewsController, animated: true)
+    }
+    
+    func configreNav() {
+        navigationController?.isNavigationBarHidden = true
     }
     
     func buttonRadius() {
@@ -31,6 +37,8 @@ class LoginController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
+        
+        
         guard let email = emailTxtField.text, !email.isEmpty else {
             showError(text: "Email boş bırakılamaz", image: nil, interaction: false, delay: nil)
             return
@@ -52,6 +60,8 @@ class LoginController: UIViewController {
             }
         }
     }
+    
+    
     
     
 

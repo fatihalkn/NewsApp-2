@@ -64,12 +64,13 @@ extension SaveNewsController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = saveNewsCollectionView.dequeueReusableCell(withReuseIdentifier: NewsViewCell.identifier, for: indexPath) as! NewsViewCell
         cell.configure(data: savedNews[indexPath.item])
+        cell.layer.cornerRadius = 10.0
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth: CGFloat = collectionView.frame.width
-        let cellHeight: CGFloat = 200
+        let cellWidth: CGFloat = collectionView.frame.width - 30
+        let cellHeight: CGFloat = 180
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
@@ -80,6 +81,20 @@ extension SaveNewsController: UICollectionViewDataSource, UICollectionViewDelega
             detailVC.modalTransitionStyle = .coverVertical
             navigationController?.pushViewController(detailVC, animated: true)
         
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
     }
     
 }

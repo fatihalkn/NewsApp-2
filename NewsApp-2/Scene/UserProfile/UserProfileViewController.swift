@@ -78,12 +78,15 @@ class UserProfileViewController: UIViewController {
     @IBAction func logOutButton(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()
-            let vc = LoginController()
-            navigationController?.pushViewController(vc, animated: true)
+            let loginVC = LoginController()
+            loginVC.modalPresentationStyle = .fullScreen
+            present(loginVC, animated: true)
         } catch {
             print(error)
         }
     }
+    
+    
     
     
     

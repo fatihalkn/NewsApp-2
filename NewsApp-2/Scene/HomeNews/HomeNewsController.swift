@@ -52,7 +52,10 @@ class HomeNewsController: UIViewController {
     
     func customNavigationController() {
         self.navigationItem.title = "Home Page"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action:#selector(didTapButton))
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 4/255.0, green: 13/255.0, blue: 18/255.0, alpha: 1.0)
+        self.navigationItem.rightBarButtonItem?.tintColor = .white
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal), style: .plain, target: self, action:#selector(didTapButton))
         
     }
     
@@ -119,14 +122,27 @@ extension HomeNewsController: UICollectionViewDelegate, UICollectionViewDataSour
         let newModel = viewModel.homeNews?.articles?[indexPath.item]
         cell.configure(data: newModel)
         cell.delegate = self
+        cell.layer.cornerRadius = 10.0
         return cell
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth: CGFloat =  collectionView.frame.width
+        let cellWidth: CGFloat =  collectionView.frame.width - 30
         let cellHigth: CGFloat = 180
         return(.init(width: cellWidth, height: cellHigth))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

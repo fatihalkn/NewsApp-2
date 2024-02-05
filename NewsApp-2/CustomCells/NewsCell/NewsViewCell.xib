@@ -57,7 +57,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.094117647058823528" green="0.23921568627450979" blue="0.23921568627450979" alpha="0.15174875827814568" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="MeH-Kn-KfH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="67D-p9-Hiu"/>
                 <constraint firstItem="4Q1-EF-SzI" firstAttribute="leading" secondItem="MeH-Kn-KfH" secondAttribute="trailing" constant="10" id="A63-Pb-ekk"/>
@@ -91,7 +91,7 @@
                 <outlet property="newsTitle" destination="gMr-F9-nhh" id="j4O-Xv-Rth"/>
                 <outlet property="webButton" destination="mGc-iP-DrS" id="xj9-6Q-asO"/>
             </connections>
-            <point key="canvasLocation" x="-403" y="46"/>
+            <point key="canvasLocation" x="-403.05343511450383" y="45.774647887323944"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -18,12 +18,14 @@ class NewsDetailController: UIViewController {
     @IBOutlet weak var newsYear: UILabel!
     @IBOutlet weak var newsDescription: UILabel!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var descView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         congfigure()
         updateTappedNews()
         checkIsNewsFavorite()
+        
     }
 
     @IBAction func saveButton(_ sender: UIButton) {
