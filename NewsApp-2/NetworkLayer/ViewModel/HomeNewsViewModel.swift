@@ -16,7 +16,7 @@ class HomeNewsViewModel {
     var errorCallback: ((String)->())?
     var succesCallback: (()->())?
     var currentSelectedTypeUpdated: ((_ beforeTabType: HeaderTabsType, _ afterTabType: HeaderTabsType) -> ())?
-    var currentSelectedHeaderCategoryType: HeaderTabsType = .business
+    var currentSelectedHeaderCategoryType: HeaderTabsType = .technology
     
     func getNewsTechnology() {
         

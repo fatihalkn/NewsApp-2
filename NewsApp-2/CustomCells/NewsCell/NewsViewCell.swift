@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import SwipeCellKit
 
 
 
@@ -14,26 +15,34 @@ protocol NewsViewCellDelegate: AnyObject {
     func openNewsURLTapped(url: String?)
 }
 
-class NewsViewCell: UICollectionViewCell {
+class NewsViewCell: SwipeCollectionViewCell {
+    
     static let identifier = "NewsViewCell"
     
     @IBOutlet weak var newsİmageView: UIImageView!
-    @IBOutlet weak var newsOvner: UILabel!
     @IBOutlet weak var newsTitle: UILabel!
     @IBOutlet weak var newsDescription: UILabel!
     @IBOutlet weak var newsPulishAt: UILabel!
     @IBOutlet weak var webButton: UIButton!
     var article: Article?
     
-    var delegate: NewsViewCellDelegate?
+    var interface: NewsViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         
+        
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        newsİmageView.layer.cornerRadius = 16.0
+        newsİmageView.clipsToBounds = true
+    }
+    
     @IBAction func openNewsUrl(_ sender: UIButton) {
-        delegate?.openNewsURLTapped(url: article?.url)
+        interface?.openNewsURLTapped(url: article?.url)
 
     }
     
@@ -42,7 +51,6 @@ class NewsViewCell: UICollectionViewCell {
         newsTitle.text = data?.title
         newsDescription.text = data?.description
         newsPulishAt.text = data?.publishedAt
-        newsOvner.text = data?.source?.id
         newsİmageView.sd_setImage(with: URL(string: data?.urlToImage ?? ""))
         
     }

@@ -29,13 +29,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lDm-e0-cXh">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="1675"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="1775"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6UV-F2-7H8">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="500"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GNm-g2-AzY">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="500"/>
                                             <color key="backgroundColor" red="0.61367982629999995" green="0.3783769011" blue="0.1194165871" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
@@ -49,39 +49,39 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="3jE-7s-CuZ" secondAttribute="trailing" id="5kI-Gu-Vh4"/>
-                                        <constraint firstAttribute="height" constant="400" id="Aqx-UJ-75p"/>
+                                        <constraint firstAttribute="height" constant="500" id="Aqx-UJ-75p"/>
                                         <constraint firstItem="GNm-g2-AzY" firstAttribute="leading" secondItem="6UV-F2-7H8" secondAttribute="leading" id="DbX-5c-rgK"/>
                                         <constraint firstItem="3jE-7s-CuZ" firstAttribute="leading" secondItem="6UV-F2-7H8" secondAttribute="leading" constant="300" id="WKe-HQ-jyu"/>
                                         <constraint firstItem="3jE-7s-CuZ" firstAttribute="top" secondItem="6UV-F2-7H8" secondAttribute="top" id="aGA-CA-CzR"/>
-                                        <constraint firstAttribute="bottom" secondItem="3jE-7s-CuZ" secondAttribute="bottom" constant="300" id="eOU-zl-ixA"/>
+                                        <constraint firstAttribute="bottom" secondItem="3jE-7s-CuZ" secondAttribute="bottom" constant="400" id="eOU-zl-ixA"/>
                                         <constraint firstItem="GNm-g2-AzY" firstAttribute="top" secondItem="6UV-F2-7H8" secondAttribute="top" id="hcU-ru-sKH"/>
                                         <constraint firstAttribute="bottom" secondItem="GNm-g2-AzY" secondAttribute="bottom" id="huS-M6-7eS"/>
                                         <constraint firstAttribute="trailing" secondItem="GNm-g2-AzY" secondAttribute="trailing" id="wL9-8Q-hdN"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAF-ZW-HN1">
-                                    <rect key="frame" x="0.0" y="400" width="393" height="1275"/>
+                                    <rect key="frame" x="0.0" y="500" width="393" height="1275"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="başlık" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUI-Zl-7V1">
-                                            <rect key="frame" x="10" y="20" width="373" height="100"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ake a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints" textAlignment="center" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUI-Zl-7V1">
+                                            <rect key="frame" x="10" y="10" width="373" height="130"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="100" id="Caq-Kj-XHx"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Caq-Kj-XHx"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.96470588450000005" green="0.96470588450000005" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemBrownColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yazar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvE-Oh-FyO">
-                                            <rect key="frame" x="10" y="170" width="188.66666666666666" height="20.333333333333343"/>
+                                            <rect key="frame" x="10" y="190" width="188.66666666666666" height="20.333333333333343"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.96470588450000005" green="0.96470588450000005" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11-11-11" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZh-Sn-LNS">
-                                            <rect key="frame" x="10" y="170" width="373" height="20.333333333333343"/>
+                                            <rect key="frame" x="10" y="190" width="373" height="20.333333333333343"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.96470588450000005" green="0.96470588450000005" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
@@ -121,9 +121,9 @@ https://newsapi.org/v2/top-headlines?country=us&amp;category=technology&amp;apiK
                                         <constraint firstAttribute="trailing" secondItem="YZh-Sn-LNS" secondAttribute="trailing" constant="10" id="OkX-UN-TQx"/>
                                         <constraint firstItem="CvE-Oh-FyO" firstAttribute="trailing" secondItem="fUI-Zl-7V1" secondAttribute="centerX" constant="2" id="WrM-ca-pwj"/>
                                         <constraint firstItem="CvE-Oh-FyO" firstAttribute="top" secondItem="fUI-Zl-7V1" secondAttribute="bottom" constant="50" id="b8C-ft-TP0"/>
-                                        <constraint firstItem="Ukj-hq-cmA" firstAttribute="top" secondItem="CvE-Oh-FyO" secondAttribute="bottom" constant="50" id="bfe-HE-nW7"/>
+                                        <constraint firstItem="Ukj-hq-cmA" firstAttribute="top" secondItem="CvE-Oh-FyO" secondAttribute="bottom" constant="30" id="bfe-HE-nW7"/>
                                         <constraint firstAttribute="bottom" secondItem="Ukj-hq-cmA" secondAttribute="bottom" id="fT0-dp-c0w"/>
-                                        <constraint firstItem="fUI-Zl-7V1" firstAttribute="top" secondItem="WAF-ZW-HN1" secondAttribute="top" constant="20" id="nfQ-LO-0rY"/>
+                                        <constraint firstItem="fUI-Zl-7V1" firstAttribute="top" relation="lessThanOrEqual" secondItem="WAF-ZW-HN1" secondAttribute="top" constant="10" id="nfQ-LO-0rY"/>
                                         <constraint firstItem="YZh-Sn-LNS" firstAttribute="top" secondItem="fUI-Zl-7V1" secondAttribute="bottom" constant="50" id="tzB-UK-cnp"/>
                                         <constraint firstItem="fUI-Zl-7V1" firstAttribute="leading" secondItem="WAF-ZW-HN1" secondAttribute="leading" constant="10" id="vg0-Jj-saX"/>
                                         <constraint firstAttribute="trailing" secondItem="fUI-Zl-7V1" secondAttribute="trailing" constant="10" id="wn5-nx-kJn"/>
@@ -163,8 +163,8 @@ https://newsapi.org/v2/top-headlines?country=us&amp;category=technology&amp;apiK
     </objects>
     <resources>
         <image name="heart" catalog="system" width="128" height="107"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

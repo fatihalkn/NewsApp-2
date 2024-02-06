@@ -24,30 +24,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-FR-Gha">
-                    <rect key="frame" x="40" y="259" width="313" height="250"/>
+                    <rect key="frame" x="40" y="259" width="313" height="306"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="asp-ht-8ux">
-                            <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
+                            <rect key="frame" x="0.0" y="0.0" width="313" height="34.333333333333336"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yr8-aD-k3b">
-                            <rect key="frame" x="0.0" y="54" width="313" height="34"/>
+                            <rect key="frame" x="0.0" y="54.333333333333314" width="313" height="34.333333333333343"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cCv-t9-lLa">
-                            <rect key="frame" x="0.0" y="108" width="313" height="34"/>
+                            <rect key="frame" x="0.0" y="108.66666666666669" width="313" height="34.333333333333343"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lzI-ls-Y6a">
-                            <rect key="frame" x="0.0" y="162" width="313" height="34"/>
+                            <rect key="frame" x="0.0" y="163" width="313" height="34.333333333333343"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAG-qM-2Lg">
-                            <rect key="frame" x="0.0" y="216" width="313" height="34"/>
+                            <rect key="frame" x="0.0" y="217.33333333333331" width="313" height="34.333333333333343"/>
                             <color key="backgroundColor" red="0.87843137250000003" green="0.80000000000000004" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <color key="tintColor" red="0.2941176593" green="0.32941177490000001" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <state key="normal" title="Button"/>
@@ -56,9 +56,21 @@
                                 <action selector="registerButton:" destination="-1" eventType="touchUpInside" id="UyM-kZ-n1D"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="nCi-mj-4oJ">
+                            <rect key="frame" x="0.0" y="271.66666666666669" width="313" height="34.333333333333314"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" systemColor="tintColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Login" subtitle="">
+                                <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="login:" destination="-1" eventType="touchUpInside" id="bTz-Zm-r9w"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="250" id="kFW-jF-f1P"/>
+                        <constraint firstAttribute="height" constant="300" id="kFW-jF-f1P"/>
                     </constraints>
                 </stackView>
             </subviews>
@@ -75,6 +87,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

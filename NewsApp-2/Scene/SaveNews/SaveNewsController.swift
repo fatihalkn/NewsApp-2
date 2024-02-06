@@ -7,9 +7,13 @@
 
 import UIKit
 import SDWebImage
+import SwipeCellKit
 
 class SaveNewsController: UIViewController {
     
+    
+    
+    private var isFavorite: Bool = false
     let viewModel = HomeNewsViewModel()
     var savedNews: [Article] = []
     
@@ -56,7 +60,37 @@ class SaveNewsController: UIViewController {
     
 }
 
-extension SaveNewsController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension SaveNewsController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, SwipeCollectionViewCellDelegate {
+    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            guard let userID = FirebaseManager.shared.userID else { return }
+            FirebaseManager.shared.updateUserSavedNews(userID: userID, newsArticle: self.savedNews[indexPath.item], willAdd: false) { result in
+                switch result {
+                case .success(let success):
+                    self.showSucceed(text: "Silme İşlemş Başarılı", interaction: false, delay: 2)
+                    self.savedNews.remove(at: indexPath.item)
+                    DispatchQueue.main.async {
+                        collectionView.deleteItems(at: [indexPath])
+                    }
+
+                case .failure(let failure):
+                    if self.isFavorite {
+                        self.showError(text: "Haber Kaydedilenlerden kaldırılamadı: \(failure.localizedDescription)", image: nil, interaction: false, delay: 2)
+                    }
+                }
+            }
+            
+        }
+
+        
+        deleteAction.image = UIImage(named: "delete")
+
+        return [deleteAction]
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return savedNews.count
     }
@@ -64,7 +98,9 @@ extension SaveNewsController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = saveNewsCollectionView.dequeueReusableCell(withReuseIdentifier: NewsViewCell.identifier, for: indexPath) as! NewsViewCell
         cell.configure(data: savedNews[indexPath.item])
+        cell.delegate = self
         cell.layer.cornerRadius = 10.0
+        
         return cell
     }
     

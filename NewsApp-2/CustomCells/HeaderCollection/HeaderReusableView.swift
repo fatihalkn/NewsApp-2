@@ -47,6 +47,7 @@ class HeaderReusableView: UICollectionReusableView {
         super.awakeFromNib()
         setupDelegets()
         setupRegister()
+        newsPhotoCollction.isPagingEnabled = true
         
     }
     
@@ -72,11 +73,11 @@ class HeaderReusableView: UICollectionReusableView {
     
     func selectTabCell(beforeTabType: HeaderTabsType, afterTabType: HeaderTabsType) {
         if let beforeCell = getTabCellFor(tabType: beforeTabType) {
-            beforeCell.backgroundColor = .clear
+            beforeCell.backgroundColor = .darkGray
         }
         
         if let afterCell = getTabCellFor(tabType: afterTabType) {
-            afterCell.backgroundColor = .systemGray2
+            afterCell.backgroundColor = .lightGray
         }
         
     }
@@ -118,10 +119,12 @@ extension HeaderReusableView: UICollectionViewDelegate, UICollectionViewDataSour
             let cell = newsCatagoryCollection.dequeueReusableCell(withReuseIdentifier: HeaderTabsCell.identifier, for: indexPath) as! HeaderTabsCell
             let cellType = tabDatas[indexPath.item].type
             if currentSelectedTabType == cellType {
-                cell.backgroundColor = .clear
+                cell.backgroundColor = .lightGray
             } else {
-                cell.backgroundColor = .systemGray2
+                cell.backgroundColor = .darkGray
+                
             }
+
             
             cell.headerTabsLabel.text = tabDatas[indexPath.item].title
             return cell
@@ -133,7 +136,7 @@ extension HeaderReusableView: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case newsPhotoCollction:
-            let cellWidth: CGFloat = collectionView.frame.width
+            let cellWidth: CGFloat = collectionView.frame.width / 1
             let cellHeight: CGFloat = collectionView.frame.height
             return .init(width: cellWidth, height: cellHeight)
         case newsCatagoryCollection:

@@ -23,20 +23,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="m9U-ia-55S">
-                    <rect key="frame" x="40" y="259" width="313" height="200"/>
+                    <rect key="frame" x="40" y="259" width="313" height="250"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123@gmail.com" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KCt-q9-lfR">
-                            <rect key="frame" x="0.0" y="0.0" width="313" height="35"/>
+                            <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y6o-yU-aaV">
-                            <rect key="frame" x="0.0" y="55" width="313" height="35"/>
+                            <rect key="frame" x="0.0" y="54" width="313" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r31-yw-nKp">
-                            <rect key="frame" x="0.0" y="110" width="313" height="35"/>
+                            <rect key="frame" x="0.0" y="108" width="313" height="34"/>
                             <color key="backgroundColor" red="0.87843137250000003" green="0.80000000000000004" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <color key="tintColor" red="0.2941176593" green="0.32941177490000001" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <state key="normal" title="Button"/>
@@ -45,15 +45,26 @@
                                 <action selector="loginButton:" destination="-1" eventType="touchUpInside" id="rEk-oa-QrJ"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHn-ay-K7B">
+                            <rect key="frame" x="0.0" y="162" width="313" height="34"/>
+                            <color key="tintColor" systemColor="tintColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Register" subtitle="">
+                                <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="register:" destination="-1" eventType="touchUpInside" id="8PG-zJ-OZZ"/>
+                            </connections>
+                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVP-4m-qvG">
-                            <rect key="frame" x="0.0" y="165" width="313" height="35"/>
+                            <rect key="frame" x="0.0" y="216" width="313" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="Nv2-uF-gj4"/>
+                        <constraint firstAttribute="height" constant="250" id="Nv2-uF-gj4"/>
                     </constraints>
                 </stackView>
             </subviews>
@@ -70,6 +81,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

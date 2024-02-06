@@ -121,7 +121,7 @@ extension HomeNewsController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: NewsViewCell.identifier, for: indexPath) as! NewsViewCell
         let newModel = viewModel.homeNews?.articles?[indexPath.item]
         cell.configure(data: newModel)
-        cell.delegate = self
+        cell.interface = self
         cell.layer.cornerRadius = 10.0
         return cell
     }

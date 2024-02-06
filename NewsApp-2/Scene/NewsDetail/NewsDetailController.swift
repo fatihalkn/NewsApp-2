@@ -27,6 +27,13 @@ class NewsDetailController: UIViewController {
         checkIsNewsFavorite()
         
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        newsImageView.layer.cornerRadius = 30
+        newsImageView.clipsToBounds = true
+        
+    }
 
     @IBAction func saveButton(_ sender: UIButton) {
         setButtonColor(isFavorite: !isFavorite)

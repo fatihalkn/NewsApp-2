@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class RegisterController: UIViewController {
     
     @IBOutlet weak var firsNameTxtField: UITextField!
@@ -27,6 +28,11 @@ class RegisterController: UIViewController {
     func pushLoginPage() {
         let loginController = LoginController()
         navigationController?.pushViewController(loginController, animated: true)
+    }
+    
+    @IBAction func login(_ sender: Any) {
+        let vc = LoginController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func registerButton(_ sender: Any) {
@@ -65,6 +71,7 @@ class RegisterController: UIViewController {
                         switch result {
                         case .success(_):
                             self.showSucceed(text: "Kayıt işlemi başarıyla tamamlandı", interaction: false, delay: nil)
+                            self.pushLoginPage()
                         case .failure(let failure):
                             self.showError(text: "Kayıt işlemi başarıyla tamamlandı ✅. Ancak Data Basei oluşturulamadı:❌ \(failure.localizedDescription) .",  image: nil, interaction: false, delay: nil)
                         }

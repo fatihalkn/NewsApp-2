@@ -21,6 +21,10 @@ class LoginController: UIViewController {
         configreNav()
         
     }
+    @IBAction func register(_ sender: Any) {
+        let vc = RegisterController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     func pushHomeNews() {
         let homeNewsController = TabController()
