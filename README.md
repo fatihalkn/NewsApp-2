@@ -8,6 +8,8 @@ SDWebImage ✅
 
 SwipeCellKit ✅
 
+ProgresHUD ✅
+
 Generic API ✅
 
 
